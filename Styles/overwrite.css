@@ -114,7 +114,7 @@ li.last .blogpost-1 { border-bottom: none; }
 
 /* LOGIN/REGISTRATION FORM
 ================================================== */
-.logreg { width: 500px; margin: 40px auto; padding: 20px 10px; border-radius: 10px; }
+.logreg { padding: 20px 10px; border-radius: 10px; }
     .logreg .lregister { text-align: center; }
     .logreg .social { margin: 0 auto 20px; float: none; text-align: center; }
         .logreg .social a.circle { text-align: center; width: 56px; height: 56px; border-radius: 100%; margin: 0 20px; display: inline-block; -webkit-transition: border-color ease-in .1s; -moz-transition: border-color ease-in .1s; -o-transition: border-color ease-in .1s; transition: border-color ease-in .1s; }
