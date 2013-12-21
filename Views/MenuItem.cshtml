@@ -20,11 +20,21 @@
 
         @* morphing the shape to keep Model untouched*@
         Model.Metadata.Alternates.Clear();
-        if (items.Any()) {
-            Model.Metadata.Type = "MenuItemLinkdd";
+        if (Model.Parent.MenuName == null) {
+            if (items.Any()) {
+                Model.Metadata.Type = "MenuItemLinkdd";
+            }
+            else {
+                Model.Metadata.Type = "MenuItemLink";
+            }
         }
         else {
-            Model.Metadata.Type = "MenuItemLink";
+            if (items.Any()) {
+                Model.Metadata.Type = "MenuTopItemLinkdd";
+            }
+            else {
+                Model.Metadata.Type = "MenuItemLink";
+            }
         }
 
         @* render the menu item only if it has some content *@
