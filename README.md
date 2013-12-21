@@ -1,4 +1,4 @@
-# Bootstrap
+# PJS.Bootstrap
 Orchard CMS Theme
 
 
