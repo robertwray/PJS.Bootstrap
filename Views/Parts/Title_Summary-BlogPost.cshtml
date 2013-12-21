@@ -1,0 +1,12 @@
+@using PJS.Bootstrap.Services;
+
+@{
+    var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
+    
+    Orchard.ContentManagement.ContentItem contentItem = Model.ContentPart.ContentItem;
+    string title = Model.Title.ToString();
+}
+
+<script type="text/javascript">
+    $('#blogpost-title-@contentItem.Id').html('@Html.ItemDisplayLink(title, contentItem)');
+</script>

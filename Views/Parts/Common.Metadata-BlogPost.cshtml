@@ -1,0 +1,16 @@
+﻿@using PJS.Bootstrap.Services;
+
+@{
+    var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
+    
+    Orchard.ContentManagement.ContentItem contentItem = Model.ContentPart.ContentItem;
+}
+
+<script type="text/javascript">
+    var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'September', 'August', 'September', 'October', 'November', 'December'];
+
+    var publishedDate = new Date(@Model.ContentPart.CreatedUtc.Year, @Model.ContentPart.CreatedUtc.Month - 1, @Model.ContentPart.CreatedUtc.Day);
+    $('#blogpost-date').html(monthNames[publishedDate.getMonth()] + ' ' + publishedDate.getDate() + ', ' + publishedDate.getFullYear());
+    $('#blogpost-author').html('@Model.ContentPart.Owner.UserName');
+    $('#blogpost-author').attr('href', '/Search?q=@Model.ContentPart.Owner.UserName').attr('title', 'Posts by @Model.ContentPart.Owner.UserName');;
+</script>

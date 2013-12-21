@@ -1,0 +1,73 @@
+﻿@using PJS.Bootstrap.Services;
+
+@{
+    var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
+    
+    string bodyHtml = Model.Html.ToString();
+
+    var firstIMG = bodyHtml.IndexOf("<img");
+    var firstSlashIMG = bodyHtml.IndexOf("/>", firstIMG >= 0 ? firstIMG : 0);
+
+    if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
+        bodyHtml = bodyHtml.Substring(firstIMG, firstSlashIMG + 2 - firstIMG);
+        bodyHtml = bodyHtml.Replace("<img", "<img class='img-responsive'");
+    }
+
+    var firstImage = new HtmlString(bodyHtml);
+
+    bodyHtml = bodyHtml.Replace(" class='img-responsive'", string.Empty);
+    
+    string blogText = Model.Html.ToString();
+    
+    // remove first image from blog text if we're displaying it elsewhere
+    if (settings.BlogPostLayout == 2) {
+        if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
+            blogText = blogText.Replace(bodyHtml, string.Empty);
+        }
+    }
+    
+    var blogHtml = new HtmlString(blogText);
+}
+
+@if (settings.BlogPostLayout == 1) {
+    <div class="blogpost-1 bottomspace25">
+        <div class="center-block text-center">
+            <h3 id="blogpost-title" class="post-title"></h3>
+            <div class="bottomspace30">
+                By <a id="blogpost-author"></a> &bull; <span id="blogpost-date"></span> <span class="blogpost-tags"></span>
+            </div>
+        </div>
+        <div>
+            @blogHtml
+        </div>
+    </div>
+}
+else if (settings.BlogPostLayout == 2) {
+    <div class="blogpost-2 bottomspace25">
+        <div class="post-thumb">
+            @if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
+                <a href="#">@firstImage</a>
+            }
+        </div>
+        <div class="post-details" style="@(firstIMG >= 0 && firstSlashIMG > firstIMG ? string.Empty : "border-top-width: 1px;")">
+            <h4 id="blogpost-title" class="post-title"></h4>
+            <div class="post-meta">
+                <ul class="meta-list">
+                    <li>
+                        <span>Posted on</span>
+                        <a id="blogpost-date" href="#"></a>
+                    </li>
+                    <li>
+                        <span>By</span>
+                        <a id="blogpost-author" href="#"></a>
+                    </li>
+                    <li>
+                        <span>In</span>
+                        <span class="blogpost-tags"></span>
+                    </li>
+                </ul>
+            </div>
+            @blogHtml
+        </div>
+    </div>
+}

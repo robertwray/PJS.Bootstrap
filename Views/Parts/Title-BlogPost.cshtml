@@ -1,0 +1,11 @@
+@using PJS.Bootstrap.Services;
+
+@{
+    var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
+    
+    Layout.Title = Model.Title;
+}
+
+<script type="text/javascript">
+    $('#blogpost-title').html('@Model.Title');
+</script>
