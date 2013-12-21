@@ -6,6 +6,7 @@
         public bool UseFluidLayout { get; set; }
         public bool UseInverseNav { get; set; }
         public bool UseStickyFooter { get; set; }
+        public bool UseHoverMenu { get; set; }
         public int BlogPostLayout { get; set; }
     }
 }

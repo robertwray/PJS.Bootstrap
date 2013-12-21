@@ -7,6 +7,7 @@
             this.UseFluidLayout = false;
             this.UseInverseNav = false;
             this.UseStickyFooter = true;
+            this.UseHoverMenu = false;
             this.BlogPostLayout = 1;
         }
 
@@ -17,6 +18,7 @@
         public virtual bool UseFluidLayout { get; set; }
         public virtual bool UseInverseNav { get; set; }
         public virtual bool UseStickyFooter { get; set; }
+        public virtual bool UseHoverMenu { get; set; }
         public virtual int BlogPostLayout { get; set; }
     }
 }

@@ -34,6 +34,11 @@
     </fieldset>
     
     <fieldset>
+        @Html.CheckBoxFor(m => m.UseHoverMenu)@T("Use Hover Menu")
+        <span id="lblUseHoverMenu" class="hint">@T("Select this checkbox to use hover-over menu items")</span>
+    </fieldset>
+    
+    <fieldset>
         <select id="@Html.FieldIdFor(m => m.Swatch)" name="@Html.FieldNameFor(m => m.Swatch)">
             <option value="bootstrap.min.css" @if (Model.Swatch.EndsWith("bootstrap.min.css")) { <text>selected="selected"</text> }>@T("Default")</option>
             <option value="amelia.min.css" @if (Model.Swatch.EndsWith("amelia.min.css")) { <text>selected="selected"</text> }>@T("Amelia")</option>

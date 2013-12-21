@@ -31,6 +31,7 @@ namespace PJS.Bootstrap.Controllers {
                 UseFluidLayout = settings.UseFluidLayout,
                 UseInverseNav = settings.UseInverseNav,
                 UseStickyFooter = settings.UseStickyFooter,
+                UseHoverMenu = settings.UseHoverMenu,
                 BlogPostLayout = settings.BlogPostLayout
             };
 
@@ -49,6 +50,7 @@ namespace PJS.Bootstrap.Controllers {
             settings.UseFluidLayout = viewModel.UseFluidLayout;
             settings.UseInverseNav = viewModel.UseInverseNav;
             settings.UseStickyFooter = viewModel.UseStickyFooter;
+            settings.UseHoverMenu = viewModel.UseHoverMenu;
             settings.BlogPostLayout = viewModel.BlogPostLayout;
 
             Services.Notifier.Information(T("Your settings have been saved."));

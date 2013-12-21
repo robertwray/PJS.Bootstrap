@@ -13,6 +13,7 @@
         public const string UseFluidLayout = "Bootstrap-Items-UseFluidLayout";
         public const string UseInverseNav = "Bootstrap-Items-UseInverseNav";
         public const string UseStickyFooter = "Bootstrap-Items-UseStickyFooter";
+        public const string UseHoverMenu = "Bootstrap-Items-UseHoverMenu";
         public const string BlogPostLayout = "Bootstrap-Items-BlogPostLayout";
     }
 }

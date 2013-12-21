@@ -22,5 +22,12 @@ namespace PJS.Bootstrap {
 
             return 2;
         }
+
+        public int UpdateFrom2() {
+            SchemaBuilder.AlterTable("ThemeSettingsRecord", table =>
+                table.AddColumn<int>("UseHoverMenu"));
+
+            return 3;
+        }
     }
 }
