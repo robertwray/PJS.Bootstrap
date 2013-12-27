@@ -7,8 +7,8 @@ Orchard CMS Theme
 
 
 ### Installation
-Package available for download in the [Orchard Gallery](http://gallery.orchardproject.net/List/Themes/Orchard.Theme.PJS.Bootstrap)
-Demo available [here](http://themes.philipsenechal.com)
+* Package available for download in the [Orchard Gallery](http://gallery.orchardproject.net/List/Themes/Orchard.Theme.PJS.Bootstrap)
+* Demo available [here](http://themes.philipsenechal.com)
 
 
 ### Usage
