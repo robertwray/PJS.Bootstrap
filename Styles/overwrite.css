@@ -209,7 +209,7 @@ ul.gallery li { padding: 0 5px !important; }
 
 /* OFORM WIDGET
 ================================================== */
-.widget-o-form-widget input, .widget-o-form-widget textarea { margin-bottom: 10px; padding: 10px; }
+.widget-o-form-widget input, .widget-o-form-widget textarea { margin-bottom: 10px; padding: 8px; }
 
 /* SOCIAL ICONS
 ================================================== */
