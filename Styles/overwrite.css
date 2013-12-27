@@ -1,7 +1,16 @@
 ﻿/* FLUID LAYOUT
 ================================================== */
 .fluid-layout { padding: 0 15px; }
-#featured { margin-top: -30px; margin-bottom: 30px; padding: 0 15px; }
+#featured { margin-top: 30px; margin-bottom: 30px; padding: 0 15px; }
+.navbar-fixed-top + #featured { margin-top: -30px; }
+
+body { padding-top: 81px; }
+.swatch-flatly body { padding-top: 91px; }
+.swatch-journal body { padding-top: 91px; }
+.swatch-readable body { padding-top: 87px; }
+.swatch-simplex body { padding-top: 71px; }
+.swatch-yeti body { padding-top: 75px; }
+
 
 /* STICKY FOOTER
 ================================================== */
@@ -16,12 +25,12 @@
 /* NAVIGATION
 ================================================== */
 .dropdown-menu { max-width: 160px; } /*if wider menu is needed, adjust this value and all submenu left positions*/
+    .dropdown-menu i { margin-top: .3em; }
+.dropdown-menu > li > a { padding-left: 10px; padding-right: 10px; }
 .dropdown .dropdown:hover > .dropdown-menu { display: block; left: 158px; top: -8px; } /*3rd level*/
 .dropdown .dropdown .dropdown:hover > .dropdown-menu { display: block; left: 158px; top: -8px; } /*4th level*/
 .swatch-yeti .dropdown .dropdown:hover > .dropdown-menu { top: 0; } /*3rd level*/
 .swatch-yeti .dropdown .dropdown .dropdown:hover > .dropdown-menu { top: 0; } /*4th level*/
-
-
 
 /* BACK TO TOP
 ================================================== */
