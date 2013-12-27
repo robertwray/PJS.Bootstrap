@@ -16,8 +16,10 @@
 /* NAVIGATION
 ================================================== */
 .dropdown-menu { max-width: 160px; } /*if wider menu is needed, adjust this value and all submenu left positions*/
-.dropdown .dropdown:hover > .dropdown-menu { display: block; left: 160px; top: 0px; } /*3rd level*/
-.dropdown .dropdown .dropdown:hover > .dropdown-menu { display: block; left: 160px; top: 0px; } /*4th level*/
+.dropdown .dropdown:hover > .dropdown-menu { display: block; left: 158px; top: -8px; } /*3rd level*/
+.dropdown .dropdown .dropdown:hover > .dropdown-menu { display: block; left: 158px; top: -8px; } /*4th level*/
+.swatch-yeti .dropdown .dropdown:hover > .dropdown-menu { top: 0; } /*3rd level*/
+.swatch-yeti .dropdown .dropdown .dropdown:hover > .dropdown-menu { top: 0; } /*4th level*/
 
 
 
