@@ -1,4 +1,6 @@
 ﻿@using PJS.Bootstrap.Services;
+﻿@using Orchard.Search.ViewModels;
+
 @{
     var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
 
@@ -11,7 +13,12 @@
     if (items.Any()) {
         items[0].Classes.Add("first");
         items[items.Count - 1].Classes.Add("last");
-    }    
+    }
+
+    var searchText = new SearchViewModel();
+    if (Model.ViewModel != null) {
+        searchText = (SearchViewModel)Model.ViewModel;
+    }
 }
 
 @tag.StartElement
@@ -43,3 +50,11 @@ else {
     </li>
 }
 @tag.EndElement
+
+@if (settings.UseNavSearch) {
+    using (Html.BeginForm("index", "search", new { area = "Orchard.Search" }, FormMethod.Get, new { @class = "navbar-form navbar-right" })) {
+        <div class="form-group">
+            @Html.TextBox("q", searchText.Query, new { @class = "form-control", placeholder = "Search" })
+        </div>
+    }
+}

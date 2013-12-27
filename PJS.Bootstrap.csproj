@@ -232,9 +232,6 @@
     <Content Include="Views\Branding.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\SearchNav.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
