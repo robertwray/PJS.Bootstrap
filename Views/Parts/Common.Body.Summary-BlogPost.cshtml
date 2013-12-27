@@ -37,8 +37,15 @@
 else if (settings.BlogPostLayout == 2) {
     if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
         <script type="text/javascript">
-            $('#blogpost-@blogPost.Id .post-thumb').html('<a href="@Url.ItemDisplayUrl((IContent)blogPost)">@firstImage</a>');
-            $('#blogpost-@blogPost.Id .post-details').css('border-top-width', '0');
+            $('#blogpost-@blogPost.Id .post-image').html('<a href="@Url.ItemDisplayUrl((IContent)blogPost)">@firstImage</a>');
+            $('#blogpost-@blogPost.Id .post-content').css('border-top-width', '0');
+        </script>
+    }
+}
+else if (settings.BlogPostLayout == 3) {
+    if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
+        <script type="text/javascript">
+            $('#blogpost-@blogPost.Id .post-image').html('<a href="@Url.ItemDisplayUrl((IContent)blogPost)">@firstImage</a>');
         </script>
     }
 }

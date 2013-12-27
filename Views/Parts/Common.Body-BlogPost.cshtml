@@ -20,7 +20,7 @@
     string blogText = Model.Html.ToString();
     
     // remove first image from blog text if we're displaying it elsewhere
-    if (settings.BlogPostLayout == 2) {
+    if (settings.BlogPostLayout == 2 || settings.BlogPostLayout == 3) {
         if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
             blogText = blogText.Replace(bodyHtml, string.Empty);
         }
@@ -32,8 +32,15 @@
 @if (settings.BlogPostLayout == 2) {
     if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
         <script type="text/javascript">
-            $('.post-thumb').html('@firstImage');
-            $('.post-details').css('border-top-width', '0');
+            $('.post-image').html('@firstImage');
+            $('.post-content').css('border-top-width', '0');
+        </script>
+    }
+}
+else if (settings.BlogPostLayout == 3) {
+    if (firstIMG >= 0 && firstSlashIMG > firstIMG) {
+        <script type="text/javascript">
+            $('.post-image').html('@firstImage');
         </script>
     }
 }

@@ -61,6 +61,7 @@
         <select id="@Html.FieldIdFor(m => m.BlogPostLayout)" name="@Html.FieldNameFor(m => m.BlogPostLayout)">
             <option value="1" @if (Model.BlogPostLayout == 1) { <text>selected="selected"</text> }>@T("Blog Layout 1")</option>
             <option value="2" @if (Model.BlogPostLayout == 2) { <text>selected="selected"</text> }>@T("Blog Layout 2")</option>
+            <option value="3" @if (Model.BlogPostLayout == 3) { <text>selected="selected"</text> }>@T("Blog Layout 3")</option>
         </select>
         <span class="hint">@T("Select the blog layout that you want")</span>
     </fieldset>
