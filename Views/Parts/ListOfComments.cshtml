@@ -11,13 +11,13 @@
 }
 
 @if (settings.BlogPostLayout == 1) {
-    <div class="comments-1 topspace25 bottomspace25">
+    <div class="comments-1 topspace15 bottomspace15">
         <h4><i class="fa fa-comments"></i>&nbsp;@T.Plural("1 Comment", "{0} Comments", (int)Model.CommentCount)</h4>
         @Display(Model.List)
     </div>
 }
 else if (settings.BlogPostLayout == 2) {
-    <div class="comments-2 topspace25 bottomspace25">
+    <div class="comments-2 topspace15 bottomspace15">
         <h4>@T.Plural("1 Comment", "{0} Comments", (int)Model.CommentCount)</h4>
         @Display(Model.List)
     </div>

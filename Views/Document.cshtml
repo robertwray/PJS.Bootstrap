@@ -3,9 +3,9 @@
 @using Orchard.UI.Resources;
 @{
     var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
-    
+
     RegisterLink(new LinkEntry { Type = "image/x-icon", Rel = "shortcut icon", Href = Url.Content("~/Themes/PJS.Bootstrap/Content/ico/favicon.ico") });
-    
+
     Style.Include(settings.Swatch);
     Style.Include("bootswatch.min.css");
     Style.Include("font-awesome.min.css");
@@ -17,7 +17,7 @@
     if (settings.UseHoverMenu) {
         Script.Include("hovermenus.js");
     }
-    
+
     Script.Include("html5shiv.js").UseCondition("lt IE 9").AtHead();
     Script.Include("respond.min.js").UseCondition("lt IE 9").AtHead();
 

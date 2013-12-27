@@ -304,22 +304,7 @@
     <Content Include="Views\Parts\Common.Body.Summary-BlogPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Parts\Title_Summary-BlogPost.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Common.Metadata.Summary-BlogPost.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Tags.ShowTags-BlogPost.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Parts\Common.Body-BlogPost.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Title-BlogPost.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Parts\Common.Metadata-BlogPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Parts\ListOfComments.cshtml" />
@@ -398,6 +383,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\MenuTopItemLinkdd.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content-BlogPost.Summary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Parts\Tags.ShowTags.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content-BlogPost.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

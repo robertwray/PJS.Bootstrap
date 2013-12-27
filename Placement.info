@@ -1,32 +1,31 @@
 <Placement>
   <Match ContentType="Page">
-    <Place Parts_Common_Metadata="-"/>
-    <Place Parts_Share_ShareBar="Content:after"/>
+    <Place Parts_Common_Metadata="-"
+           Parts_Share_ShareBar="Content:after"/>
     <Match DisplayType="Summary">
       <Place Parts_Share_ShareBar="-"/>
     </Match>
   </Match>
 
   <Match ContentType="Blog">
-    <Place Parts_Title="-"/>
-    <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Title="-"
+           Parts_Common_Metadata="-"/>
   </Match>
 
   <Match ContentType="BlogPost">
     <Match DisplayType="Summary">
-      <Place Parts_Common_Body_Summary="Content:1"/>
-      <Place Parts_Title_Summary="Content:2"/>
-      <Place Parts_Common_Metadata_Summary="Content:3"/>
-      <Place Parts_Tags_ShowTags="Content:4"/>
-      <Place Parts_Comments_Count="-"/>
+      <Place Parts_Common_Body_Summary="Summary:0"
+             Parts_Tags_ShowTags="Tags:0"
+             Parts_Common_Metadata_Summary="-"
+             Parts_Comments_Count="-" />
     </Match>
     <Match DisplayType="Detail">
-      <Place Parts_Title="Content:after.1"/>
-      <Place Parts_Common_Metadata="Content:after.2"/>
-      <Place Parts_Tags_ShowTags="Content:after.3"/>
-      <Place Parts_Share_ShareBar="Content:after.4"/>
-      <Place Parts_ListOfComments="Content:after.5"/>
-      <Place Parts_CommentForm="Content:after.6"/>
+      <Place Parts_Common_Body="Summary:0"
+             Parts_Tags_ShowTags="Tags:0"
+             Parts_Share_ShareBar="Footer:1"
+             Parts_ListOfComments="Footer:2"
+             Parts_CommentForm="Footer:3"
+             Parts_Common_Metadata="-" />
     </Match>
   </Match>
 
@@ -35,7 +34,7 @@
   </Match>
     
   <Match Path="/">
-    <Place Parts_Title="-"/>
-    <Place Parts_Share_ShareBar="-"/>
+    <Place Parts_Title="-"
+           Parts_Share_ShareBar="-"/>
   </Match>
 </Placement>

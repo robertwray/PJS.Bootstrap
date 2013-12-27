@@ -78,7 +78,7 @@ else {
         }
     }
     else if (settings.BlogPostLayout == 2) {
-        using (Html.BeginFormAntiForgeryPost(Url.Action("Create", "Comment", new { Area = "Orchard.Comments", ReturnUrl = Context.Request.ToUrlString() }), FormMethod.Post, new { id = "commentform", @class = "comment-form topspace25" })) {
+        using (Html.BeginFormAntiForgeryPost(Url.Action("Create", "Comment", new { Area = "Orchard.Comments", ReturnUrl = Context.Request.ToUrlString() }), FormMethod.Post, new { id = "commentform", @class = "comment-form" })) {
             <div class="comments-2">
                 <h4>Leave a Comment</h4>
                 @Html.ValidationSummary()

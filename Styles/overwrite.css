@@ -49,7 +49,7 @@ li.last .blogpost-1 { border-bottom: none; }
 .blogpost-2 { overflow: hidden; border-radius: 3px; max-width: 800px; }
     .blogpost-2 .post-thumb { position: relative; }
         .blogpost-2 .post-thumb img:hover { opacity: 0.8; filter: alpha(opacity=80); }
-    .blogpost-2 .post-details { padding: 20px; border: 1px solid #eee; border-top-width: 0; }
+    .blogpost-2 .post-details { padding: 20px; border: 1px solid #eee; /*border-top-width: 0;*/ }
         .blogpost-2 .post-details .post-title { margin: 0 0 20px; position: relative; font-weight: 700; }
             .blogpost-2 .post-details .post-title:before { content: ""; width: 50px; height: 1px; background-color: #eee; display: block; position: absolute; bottom: -10px; left: 0; }
         .blogpost-2 .post-details .post-meta { padding: 10px 0; overflow: hidden; padding-top: 5px; }
@@ -158,7 +158,7 @@ li.last .blogpost-1 { border-bottom: none; }
 .carousel-control .icon-prev, .carousel-control .icon-next { width: 20px; height: 20px; margin-top: -10px; margin-left: -10px; font-family: serif; }
     .carousel-control .icon-prev:before { content: '\2039'; }
     .carousel-control .icon-next:before { content: '\203a'; }
-.carousel-indicators { position: absolute; left: 50%; z-index: 10000; width: 60%; margin-left: -30%; padding-left: 0; list-style: none; text-align: center; }
+.carousel-indicators { position: absolute; left: 50%; z-index: 1000; width: 60%; margin-left: -30%; padding-left: 0; list-style: none; text-align: center; }
     .carousel-indicators li { display: inline-block; width: 10px; height: 10px; margin: 1px; text-indent: -999px; border: 1px solid #ffffff; border-radius: 10px; cursor: pointer; }
     .carousel-indicators .active { margin: 0; width: 12px; height: 12px; background-color: #ffffff; }
 .carousel-caption { position: absolute; left: 15%; right: 15%; bottom: 20px; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: #ffffff; text-align: center; text-shadow: 0 1px 2px rgba(0,0,0,0.6); }
@@ -172,6 +172,10 @@ li.last .blogpost-1 { border-bottom: none; }
 .carousel-control i { position: absolute; top: 30px; left: 0; z-index: 5; display: inline-block; width: 50px; height: 80px; margin-left: 0px; }
 .carousel-indicators.out { bottom: -5px; }
 .carousel-control.left, .carousel-control.right { margin-top: 11%; }
+
+/* SHAREBAR
+================================================== */
+.sharebar-wrapper { margin-top: 25px; }
 
 /* ZEN GALLERY
 ================================================== */
