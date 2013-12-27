@@ -25,7 +25,7 @@ body { padding-top: 81px; }
 /* NAVIGATION
 ================================================== */
 .dropdown-menu { max-width: 160px; } /*if wider menu is needed, adjust this value and all submenu left positions*/
-    .dropdown-menu i { margin-top: .3em; }
+    .dropdown-menu i { margin-top: 3px; }
 .dropdown-menu > li > a { padding-left: 10px; padding-right: 10px; }
 .dropdown .dropdown:hover > .dropdown-menu { display: block; left: 158px; top: -8px; } /*3rd level*/
 .dropdown .dropdown .dropdown:hover > .dropdown-menu { display: block; left: 158px; top: -8px; } /*4th level*/
