@@ -18,10 +18,6 @@ body.sticky-footer { height: 100%; }
 #layout-wrapper.sticky-footer { min-height: 100%; height: auto; margin: 0 auto -117px; padding: 0 0 117px; }
 /*change last value in margin and padding to adjust footer height*/
 #footer { height: 115px; }
-/* responsive */
-@media (max-width: 767px) {
-    #footer { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
-}
 
 /* NAVIGATION
 ================================================== */
@@ -248,7 +244,6 @@ li.last .blogpost-3 { border-bottom: none; padding-bottom: 0; }
 .carousel-control.right { border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
 .carousel-control i { position: absolute; top: 30px; left: 0; z-index: 5; display: inline-block; width: 50px; height: 80px; margin-left: 0px; }
 .carousel-indicators.out { bottom: -5px; }
-.carousel-control.left, .carousel-control.right { margin-top: 11%; }
 
 /* SHAREBAR
 ================================================== */
@@ -309,3 +304,7 @@ a:hover, a:focus { text-decoration: none; }
 .bottomspace50 { padding-bottom: 50px; }
 
 #theme-name { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: 500; }
+
+/* BOOTSWATCH FIXES
+================================================== */
+.progress { height: 20px !important; }
