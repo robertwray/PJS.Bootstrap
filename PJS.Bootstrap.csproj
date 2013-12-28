@@ -117,6 +117,7 @@
     <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery.prettyPhoto.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\switcher.js" />
     <Content Include="Styles\amelia.css" />
     <Content Include="Styles\amelia.min.css" />
     <Content Include="Styles\bootstrap.css" />
@@ -144,6 +145,7 @@
     <Content Include="Styles\slate.min.css" />
     <Content Include="Styles\spacelab.css" />
     <Content Include="Styles\spacelab.min.css" />
+    <Content Include="Styles\switcher.css" />
     <Content Include="Styles\united.css" />
     <Content Include="Styles\united.min.css" />
     <Content Include="Styles\yeti.css" />
@@ -389,6 +391,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Content-BlogPost.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Switcher.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

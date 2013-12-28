@@ -49,7 +49,7 @@
     @Display(Model.Head)
     <script>(function (d) { d.className = "dyn " + d.className.substring(6, d.className.length); })(document.documentElement);</script>
 </head>
-<body style="@(settings.UseStickyFooter ? "height: 100%;" : string.Empty) @(settings.UseFixedNav ? string.Empty : "padding-top: 0 !important;")">
+<body class="@(settings.UseStickyFooter ? "sticky-footer" : string.Empty) @(settings.UseFixedNav ? "fixed-nav" : string.Empty)">
     @* Layout (template) is in the Body zone @ the default position (nothing, zero, zilch) *@
     @Display(Model.Body)
     @Display(Model.Tail)
