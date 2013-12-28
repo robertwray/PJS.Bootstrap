@@ -10,6 +10,8 @@ Orchard CMS Theme
 * Package available for download in the [Orchard Gallery](http://gallery.orchardproject.net/List/Themes/Orchard.Theme.PJS.Bootstrap)
 * Demo available [here](http://themes.philipsenechal.com)
 
+(please note that when using the option switcher panel and changing the swatch or refreshing the page, the navbar may render with a top-margin. Simply click a link on the navbar and it should correct itself. The issue does not occur in production, only when using the option switcher panel on the demo site)
+
 
 ### Usage
 Includes Admin panel selectable options for:
