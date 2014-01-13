@@ -5,6 +5,8 @@
     var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
 
     var blogPost = Model.ContentItem;
+
+    Layout.Title = blogPost.TitlePart.Title;
 }
 
 @if (settings.BlogPostLayout == 1) {
