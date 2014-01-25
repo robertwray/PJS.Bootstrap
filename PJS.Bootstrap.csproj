@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Admin\Swatches.png" />
+    <Content Include="Content\logo_bootstrap.png" />
     <Content Include="Content\facebook.png" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -394,6 +395,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Switcher.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Content-Blog.Detail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

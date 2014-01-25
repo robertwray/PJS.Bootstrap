@@ -1,46 +1,36 @@
 ﻿$(function () {
     if (supports_html5_storage) {
-        if (sessionStorage.PJSSwatch) {
+        if (sessionStorage.Swatch) {
             changeSwatch();
         }
 
-        if (sessionStorage.PJSFluidLayout) {
+        if (sessionStorage.FluidLayout) {
             changeFluidLayout();
         }
 
-        if (sessionStorage.PJSInverseNav) {
+        if (sessionStorage.InverseNav) {
             changeInverseNav();
         }
 
-        if (sessionStorage.PJSNavSearch) {
+        if (sessionStorage.NavSearch) {
             changeNavSearch();
         }
         else {
             $('#navsearch').prop('checked', true);
         }
 
-        if (sessionStorage.PJSHoverMenus) {
+        if (sessionStorage.HoverMenus) {
             changeHoverMenus();
         }
     }
 
-    $('#style-switcher h2 a').click(function (e) {
-        e.preventDefault();
-        var div = $('#style-switcher');
-        if (div.css('left') === '-206px') {
-            $('#style-switcher').animate({
-                left: '0px'
-            });
-        } else {
-            $('#style-switcher').animate({
-                left: '-206px'
-            });
-        }
+    $('.skin-chooser-toggle').click(function () {
+        $('.skin-chooser-wrap').toggleClass('show');
     });
 
     $('#swatches').change(function (e) {
         if (supports_html5_storage) {
-            sessionStorage.PJSSwatch = $(this).val();
+            sessionStorage.Swatch = $(this).val();
 
             changeSwatch();
         }
@@ -51,7 +41,7 @@
 
     $('#fluidlayout').change(function () {
         if (supports_html5_storage) {
-            sessionStorage.PJSFluidLayout = $(this).is(':checked');
+            sessionStorage.FluidLayout = $(this).is(':checked');
 
             changeFluidLayout();
         }
@@ -62,7 +52,7 @@
 
     $('#inversenav').change(function () {
         if (supports_html5_storage) {
-            sessionStorage.PJSInverseNav = $(this).is(':checked');
+            sessionStorage.InverseNav = $(this).is(':checked');
 
             changeInverseNav();
         }
@@ -73,7 +63,7 @@
 
     $('#navsearch').change(function () {
         if (supports_html5_storage) {
-            sessionStorage.PJSNavSearch = $(this).is(':checked');
+            sessionStorage.NavSearch = $(this).is(':checked');
 
             changeNavSearch();
         }
@@ -84,7 +74,7 @@
 
     $('#hovermenus').change(function () {
         if (supports_html5_storage) {
-            sessionStorage.PJSHoverMenus = $(this).is(':checked');
+            sessionStorage.HoverMenus = $(this).is(':checked');
 
             changeHoverMenus();
 
@@ -121,34 +111,34 @@ function changeSwatch() {
         $('link[rel=stylesheet][href="/Themes/PJS.Bootstrap/Styles/united.min.css"]').remove();
         $('link[rel=stylesheet][href="/Themes/PJS.Bootstrap/Styles/yeti.min.css"]').remove();
 
-        $('html').removeClass('swatch-bootstrap');
-        $('html').removeClass('swatch-amelia');
-        $('html').removeClass('swatch-cerulean');
-        $('html').removeClass('swatch-cosmo');
-        $('html').removeClass('swatch-cyborg');
-        $('html').removeClass('swatch-flatly');
-        $('html').removeClass('swatch-journal');
-        $('html').removeClass('swatch-readable');
-        $('html').removeClass('swatch-simplex');
-        $('html').removeClass('swatch-slate');
-        $('html').removeClass('swatch-spacelab');
-        $('html').removeClass('swatch-united');
-        $('html').removeClass('swatch-yeti');
+        $('body').removeClass('swatch-bootstrap');
+        $('body').removeClass('swatch-amelia');
+        $('body').removeClass('swatch-cerulean');
+        $('body').removeClass('swatch-cosmo');
+        $('body').removeClass('swatch-cyborg');
+        $('body').removeClass('swatch-flatly');
+        $('body').removeClass('swatch-journal');
+        $('body').removeClass('swatch-readable');
+        $('body').removeClass('swatch-simplex');
+        $('body').removeClass('swatch-slate');
+        $('body').removeClass('swatch-spacelab');
+        $('body').removeClass('swatch-united');
+        $('body').removeClass('swatch-yeti');
 
         var fileref = document.createElement("link");
         fileref.setAttribute("rel", "stylesheet");
         fileref.setAttribute("type", "text/css");
-        fileref.setAttribute("href", "/Themes/PJS.Bootstrap/Styles/" + sessionStorage.PJSSwatch + ".min.css");
+        fileref.setAttribute("href", "/Themes/PJS.Bootstrap/Styles/" + sessionStorage.Swatch + ".min.css");
         document.getElementsByTagName("head")[0].appendChild(fileref);
 
-        $('html').addClass('swatch-' + sessionStorage.PJSSwatch);
+        $('body').addClass('swatch-' + sessionStorage.Swatch);
 
-        $('#swatches').val(sessionStorage.PJSSwatch);
+        $('#swatches').val(sessionStorage.Swatch);
     }, 500);
 }
 
 function changeFluidLayout() {
-    if (sessionStorage.PJSFluidLayout == 'true') {
+    if (sessionStorage.FluidLayout == 'true') {
         $('.container').removeClass('container').addClass('fluid-layout');
         $('#fluidlayout').prop('checked', true);
     }
@@ -159,7 +149,7 @@ function changeFluidLayout() {
 }
 
 function changeInverseNav() {
-    if (sessionStorage.PJSInverseNav == 'true') {
+    if (sessionStorage.InverseNav == 'true') {
         $('.navbar-fixed-top').removeClass('navbar-default').addClass('navbar-inverse');
         $('#inversenav').prop('checked', true);
     }
@@ -170,7 +160,7 @@ function changeInverseNav() {
 }
 
 function changeNavSearch() {
-    if (sessionStorage.PJSNavSearch == 'true') {
+    if (sessionStorage.NavSearch == 'true') {
         $('.navbar-form').toggle(true);
         $('#navsearch').prop('checked', true);
     }
@@ -181,7 +171,7 @@ function changeNavSearch() {
 }
 
 function changeHoverMenus() {
-    if (sessionStorage.PJSHoverMenus == 'true') {
+    if (sessionStorage.HoverMenus == 'true') {
         var fileref = document.createElement('script')
         fileref.setAttribute("type", "text/javascript")
         fileref.setAttribute("src", "/Themes/PJS.Bootstrap/Scripts/hovermenus.js")
@@ -194,5 +184,4 @@ function changeHoverMenus() {
 
         $('#hovermenus').prop('checked', false);
     }
-
 }
