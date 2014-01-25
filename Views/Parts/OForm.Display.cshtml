@@ -7,15 +7,20 @@
     ContentItem contentItem = Model.ContentItem;
     var form = (OFormPart)contentItem.Get(typeof(OFormPart));
 }
-
-@helper Captcha() {
-    var random = new Random();
-    var routeValues = new { area = "oforms", c = random.Next() };
-    <div class="col-md-6" style="padding: 0;">
-        @Html.Image(Url.Action("GenerateCaptcha", "Home", routeValues), "captcha", null)
-    </div>
-    @Html.TextBox(oforms.OFormGlobals.CaptchaKey, null, new { remote = Url.Action("ValidateCaptcha", "Home", routeValues), @class = "required col-md-6" })
-}
+ 
+@helper Captcha()
+    {
+        var random = new Random();
+        var routeValues = new { area = "oforms", c = random.Next() };
+        <div class="row">
+            <div class="col-md-6">
+                @Html.Image(Url.Action("GenerateCaptcha", "Home", routeValues), "captcha", new { @class = "img-responsive" })
+            </div>
+            <div class="col-md-6">
+                @Html.TextBox(oforms.OFormGlobals.CaptchaKey, null, new { remote = Url.Action("ValidateCaptcha", "Home", routeValues), @class = "form-control required", @style = "margin-bottom: 20px;" })
+            </div>
+        </div>
+    }
 
 @{
     var formAttributes = new Dictionary<string, object>();
@@ -27,18 +32,20 @@
     if (!string.IsNullOrEmpty(form.Target)) {
         formAttributes.Add("target", form.Target);
     }
-}
+}           
 
 @using (Html.BeginFormAntiForgeryPost(
                                         String.IsNullOrEmpty(form.Action) ? Url.Action("SubmitForm", "Home", new { area = "oforms" }) : form.Action,
                                         form.Method == "POST" ? FormMethod.Post : FormMethod.Get,
                                         formAttributes
                                     )
-       ) {
+       )
+{
     @Html.Hidden(oforms.OFormGlobals.NameKey, form.Name)
     @Html.Hidden("ReturnUrl", Context.Request.RawUrl)
-    if (!string.IsNullOrEmpty(form.InnerHtml)) { 
-    @Html.Raw(form.InnerHtml.Replace("{captcha}", Captcha().ToString()))
+    if (!string.IsNullOrEmpty(form.InnerHtml))
+    { 
+        @Html.Raw(form.InnerHtml.Replace("{captcha}", Captcha().ToString()))
     }
 }
 @{
@@ -58,17 +65,19 @@
     Script.Require("ValidatorAdditional");
 }
 
-@using (Script.Foot()) {
-    if (!string.IsNullOrEmpty(Model.Culture) && Model.Culture != "en") {
+@using (Script.Foot())
+{
+    if (!string.IsNullOrEmpty(Model.Culture) && Model.Culture != "en")
+    {
         Script.Include("validateLocalization/messages_" + Model.Culture + ".js");
     }        
     
     <script type="text/javascript">
-        //<![CDATA[
-        (function($) {
-            $(document).ready(function() {
-                $.ajaxSetup({ async: false });
-                $('#@form.Name').validate({
+    //<![CDATA[
+	(function($) {
+        $(document).ready(function() {
+            $.ajaxSetup({ async: false });
+            $('#@form.Name').validate({
                 rules: {	                            
 			            @Html.Raw(validatorCollectorString)
                 },
@@ -81,7 +90,7 @@
             });
         });
 	})(jQuery);
-    //]]>
+	//]]>
     </script>
 }
 
