@@ -12,7 +12,7 @@
         <div class="center-block text-center">
             <h3 class="post-title"><a href="@Url.ItemDisplayUrl((IContent)blogPost)">@blogPost.TitlePart.Title</a></h3>
             <div class="bottomspace30">
-                By <a href="/Search?q=@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a> &bull; @blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMMM d, yyyy") &bull; @Display(Model.Tags)
+                By <a href="/Search?q=@blogPost.CommonPart.Owner.UserName">@blogPost.CommonPart.Owner.UserName</a> &bull; @blogPost.CommonPart.CreatedUtc.ToLocalTime().ToString("MMMM d, yyyy") &bull; @Display(Model.Tags) &bull; @Display(Model.CommentsCount)
             </div>
         </div>
         <div>
@@ -24,6 +24,16 @@
 else if (settings.BlogPostLayout == 2) {
     <div id="blogpost-@blogPost.Id" class="blogpost-2 bottomspace25">
         <div class="post-image">
+            @foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" class="img-responsive" />
+                using (Script.Foot()) {
+                    <script type="text/javascript">
+                        $(function () {
+                            $('.post-content').css('border-top', '0');
+                        });
+                    </script>
+                }
+            }
         </div>
         <div class="post-content">
             <h4 class="post-title"><a href="@Url.ItemDisplayUrl((IContent)blogPost)">@blogPost.TitlePart.Title</a></h4>
@@ -38,6 +48,9 @@ else if (settings.BlogPostLayout == 2) {
                     <li>
                         In @Display(Model.Tags)
                     </li>
+                    <li>
+                        @Display(Model.CommentsCount)
+                    </li>
                 </ul>
             </div>
             @Display(Model.Summary)
@@ -47,6 +60,9 @@ else if (settings.BlogPostLayout == 2) {
 else if (settings.BlogPostLayout == 3) {
     <div id="blogpost-@blogPost.Id" class="blogpost-3">
         <div class="post-image">
+            @foreach (var mediapart in Model.ContentItem.BlogPostPart.BlogPostImage.MediaParts) {
+                <img src="@mediapart.MediaUrl" alt="@mediapart.AlternateText" class="img-responsive" />
+            }
         </div>
         <div class="post-header">
             <h3 class="post-title"><a href="@Url.ItemDisplayUrl((IContent)blogPost)">@blogPost.TitlePart.Title</a></h3>
