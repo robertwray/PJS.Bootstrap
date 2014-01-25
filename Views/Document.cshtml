@@ -26,19 +26,19 @@
 }
 <!DOCTYPE html>
 <!--[if lt IE 7]>
-    <html lang="@WorkContext.CurrentCulture" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 static @Html.ClassForPage()">
+    <html lang="@WorkContext.CurrentCulture" class="lt-ie10 lt-ie9 lt-ie8 lt-ie7 static @Html.ClassForPage()">
 <![endif]-->
 <!--[if IE 7]>
-    <html lang="@WorkContext.CurrentCulture" class="no-js lt-ie10 lt-ie9 lt-ie8 static @Html.ClassForPage()">
+    <html lang="@WorkContext.CurrentCulture" class="lt-ie10 lt-ie9 lt-ie8 static @Html.ClassForPage()">
 <![endif]-->
 <!--[if IE 8]>
-    <html lang="@WorkContext.CurrentCulture" class="no-js lt-ie10 lt-ie9 static @Html.ClassForPage()">
+    <html lang="@WorkContext.CurrentCulture" class="lt-ie10 lt-ie9 static @Html.ClassForPage()">
 <![endif]-->
 <!--[if IE 9]>
-    <html lang="@WorkContext.CurrentCulture" class="no-js lt-ie10 static @Html.ClassForPage()">
+    <html lang="@WorkContext.CurrentCulture" class="lt-ie10 static @Html.ClassForPage()">
 <![endif]-->
 <!--[if gt IE 9]><!-->
-<html lang="@WorkContext.CurrentCulture" class="no-js static @Html.ClassForPage() swatch-@settings.Swatch.Replace(".min.css", string.Empty) theme-@WorkContext.CurrentTheme.Name" style="@(settings.UseStickyFooter ? "height:100%;" : string.Empty)">
+<html lang="@WorkContext.CurrentCulture" class="static @Html.ClassForPage() @(settings.UseStickyFooter ? "sticky-footer" : string.Empty)">
 <!--<![endif]-->
 <head>
     <link rel="apple-touch-icon" href="@Href(Html.ThemePath(WorkContext.CurrentTheme, "/Content/ico/apple-touch-icon.png"))">
@@ -49,7 +49,7 @@
     @Display(Model.Head)
     <script>(function (d) { d.className = "dyn " + d.className.substring(6, d.className.length); })(document.documentElement);</script>
 </head>
-<body class="@(settings.UseStickyFooter ? "sticky-footer" : string.Empty) @(settings.UseFixedNav ? "fixed-nav" : string.Empty)">
+<body class="theme-@WorkContext.CurrentTheme.Name swatch-@settings.Swatch.Replace(".min.css", string.Empty) @(settings.UseFixedNav ? "fixed-nav" : string.Empty)">
     @* Layout (template) is in the Body zone @ the default position (nothing, zero, zilch) *@
     @Display(Model.Body)
     @Display(Model.Tail)

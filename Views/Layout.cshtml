@@ -52,15 +52,41 @@
 
     WorkContext.Layout.Header.Add(New.Branding(), "0"); // Site name and link to the home page
     WorkContext.Layout.Footer.Add(New.BadgeOfHonor(), "5"); // Powered by Wiggleware
-    //WorkContext.Layout.Footer.Add(New.Switcher(), "0"); // Switcher for use in demo mode
+    WorkContext.Layout.Footer.Add(New.Styler(), "0"); // // Online Styler-remove or comment this line to disable styler
+
+    // Sample Content
+    if (Request.RawUrl == "/") {
+        //WorkContext.Layout.Content.Add(New.SampleHome(), "0");
+        //WorkContext.Layout.TripelFirst.Add(New.SampleTripel1(), "0");
+        //WorkContext.Layout.TripelSecond.Add(New.SampleTripel2(), "0");
+        //WorkContext.Layout.TripelThird.Add(New.SampleTripel3(), "0");
+    }
+    else if (Request.RawUrl == "/pages/about-us") {
+        //WorkContext.Layout.Content.Add(New.SampleAbout(), "0");
+    }
+    else if (Request.RawUrl == "/pages/our-team") {
+        //WorkContext.Layout.Content.Add(New.SampleTeam(), "0");
+    }
+    else if (Request.RawUrl == "/pages/services") {
+        //WorkContext.Layout.Content.Add(New.SampleServices(), "0");
+    }
+    else if (Request.RawUrl == "/pages/faqs") {
+        //WorkContext.Layout.Content.Add(New.SampleFaqs(), "0");
+    }
+    else if (Request.RawUrl == "/features/ui-elements") {
+        //WorkContext.Layout.Content.Add(New.SampleUI(), "0");
+    }
+    else if (Request.RawUrl == "/features/buttons") {
+        //WorkContext.Layout.Content.Add(New.SampleButtons(), "0");
+    }
+    else if (Request.RawUrl == "/features/pricing-tables") {
+        //WorkContext.Layout.Content.Add(New.SamplePricing(), "0");
+    }
 
     /* Last bit of code to prep the layout wrapper
     ***************************************************************/
 
     Model.Id = "layout-wrapper";
-    if (settings.UseStickyFooter) {
-        Model.Classes.Add("sticky-footer");
-    }
     var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
 
     var containerClass = settings.UseFluidLayout ? "fluid-layout" : "container";
