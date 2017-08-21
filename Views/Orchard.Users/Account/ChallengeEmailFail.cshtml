@@ -1,10 +1,15 @@
 ﻿@model dynamic
 
-@{
-    Html.TitleForPage(T("Challenge Email"));
+@using (Script.Foot()) {
+    <script type="text/javascript">
+        $(function () {
+            $(".alert").alert();
+        });
+    </script>
 }
 
-<div class="alert alert-dismissable alert-danger">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <i class="fa fa-times-circle"></i>&nbsp;&nbsp;@T("Your email address could not be validated.")
+<div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>@Html.TitleForPage(T("Challenge Email").ToString())</strong>
+    <p>@T("Your email address could not be validated.")</p>
 </div>

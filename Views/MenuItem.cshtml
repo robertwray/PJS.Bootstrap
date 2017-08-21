@@ -3,11 +3,14 @@
     var items = Enumerable.Cast<dynamic>((System.Collections.IEnumerable)Model);
 }
 @{
+    string requestUrl = Request.Path.ToUpperInvariant();
+    string modelUrl = Model.Href.ToUpperInvariant();
+
     if (!HasText(Model.Text)) {
         @DisplayChildren(Model)
     }
     else {
-        if ((bool) Model.Selected) {
+        if ((bool)Model.Selected || (!string.IsNullOrEmpty(modelUrl) && requestUrl.StartsWith(modelUrl + "/"))) {
             Model.Classes.Add("active");
         }
 
@@ -17,9 +20,21 @@
 
         @* morphing the shape to keep Model untouched*@
         Model.Metadata.Alternates.Clear();
-        Model.Metadata.Type = "MenuItemLink";
-        if (items.Any()) {
-            Model.Metadata.Type = "MenuItemLinkdd";
+        if (Model.Parent.MenuName == null) {
+            if (items.Any()) {
+                Model.Metadata.Type = "MenuItemLinkdd";
+            }
+            else {
+                Model.Metadata.Type = "MenuItemLink";
+            }
+        }
+        else {
+            if (items.Any()) {
+                Model.Metadata.Type = "MenuTopItemLinkdd";
+            }
+            else {
+                Model.Metadata.Type = "MenuItemLink";
+            }
         }
 
         @* render the menu item only if it has some content *@

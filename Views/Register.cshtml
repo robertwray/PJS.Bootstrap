@@ -1,40 +1,49 @@
-﻿@if (Html.ValidationSummary() != null) {
-    <div class="alert alert-dismissable alert-danger">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <i class="fa fa-times-circle"></i>&nbsp;&nbsp;@T("Account creation was unsuccessful. Please correct the errors and try again.")
-        <p>@Html.ValidationSummary()</p>
-    </div>
-}
-<h1>@Html.TitleForPage(T("Create a New Account").ToString())</h1>
-<div class="well">
-    <p>@T("Use the form below to create a new account.")</p>
-    <p>@T("Passwords are required to be a minimum of {0} characters in length.", ViewData["PasswordLength"])</p>
-    @using (Html.BeginFormAntiForgeryPost(Url.Action("Register", new { ReturnUrl = Request.QueryString["ReturnUrl"] }))) {
-        <fieldset>
-            <legend>@T("Account Information")</legend>
-            <div class="form-group">
-                <label for="username">@T("Username:")</label>
-                @Html.TextBox("username", null, new { @class = "validate[required,ajax[ajaxUserName]]" })
+﻿<div class="well well-sm logreg col-xs-12 col-md-6 col-md-offset-3">
+    <h3>Register with @WorkContext.CurrentSite.SiteName</h3>
+    <hr />
+    @using (Html.BeginFormAntiForgeryPost(Url.Action("Register"), FormMethod.Post, new { @class = "form-horizontal" })) {
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username" class="col-lg-3 control-label">@T("Username")</label>
+            <div class="col-lg-9">
+                @Html.TextBox("username", string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessage("username")
             </div>
-            <div class="form-group">
-                <label for="email">@T("Email:")</label>
-                @Html.TextBox("email", null, new { @class = "validate[required,custom[email],ajax[ajaxUserEmail]]" })
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email" class="col-lg-3 control-label">@T("Email")</label>
+            <div class="col-lg-9">
+                @Html.TextBox("email", string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessage("email")
             </div>
-            <div class="form-group">
-                <label for="password">@T("Password:")</label>
-                @Html.Password("password", null, new { @class = "validate[required,minSize[" + ViewData["PasswordLength"] + "]]" })
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password" class="col-lg-3 control-label">@T("Password")</label>
+            <div class="col-lg-9">
+                @Html.Password("password", string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessage("password")
             </div>
-            <div class="form-group">
-                <label for="confirmPassword">@T("Confirm password:")</label>
-                @Html.Password("confirmPassword", null, new { @class = "validate[required,minSize[" + ViewData["PasswordLength"] + "],equals[password]]" })
+        </div>
+        <!-- Password Confirm -->
+        <div class="form-group">
+            <label for="confirmpassword" class="col-lg-3 control-label">@T("Confirm")</label>
+            <div class="col-lg-9">
+                @Html.Password("confirmpassword", string.Empty, new { @class = "form-control" })
                 @Html.ValidationMessage("confirmPassword")
             </div>
-            <div class="form-group">
-                <button class="primaryAction" type="submit">@T("Register")</button>
+        </div>
+        <!-- Buttons -->
+        <div class="form-group">
+            <div class="col-lg-offset-3 col-lg-9">
+                <button type="submit" class="btn btn-primary">@T("Register")</button>
+                <button type="reset" class="btn btn-default">@T("Reset")</button>
             </div>
-        </fieldset>
+        </div>
     }
+    <hr />
+    <div class="lregister">
+        Already have account with us? @Html.ActionLink(T("Login").ToString(), "LogOn", new { Controller = "Account", Area = "Orchard.Users", ReturnUrl = (Request.QueryString["ReturnUrl"] ?? Request.RawUrl) }, new { rel = "nofollow" })
+    </div>
 </div>
