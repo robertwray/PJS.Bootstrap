@@ -1,13 +1,1 @@
-@using PJS.Bootstrap.Services;
-@{
-    var homeUrl = Href("~/");
-    var settings = WorkContext.Resolve<IThemeSettingsService>().GetSettings();
-}
-
-@if (settings.UseFixedNav) { 
-    <a class="navbar-brand" href="@homeUrl">@WorkContext.CurrentSite.SiteName</a>
-}
-else {
-    <h1>@WorkContext.CurrentSite.SiteName</h1>
-    <p class="lead">Your tagline here.</p>
-}
+﻿<a href="@Href("~/")" class="navbar-brand">@WorkContext.CurrentSite.SiteName</a>
