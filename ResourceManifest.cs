@@ -5,7 +5,7 @@ namespace PJS.Bootstrap {
         public void BuildManifests(ResourceManifestBuilder builder) {
             var manifest = builder.Add();
 
-            manifest.DefineScript("Bootstrap").SetUrl("bootstrap-3.3.5/js/bootstrap.min.js", "bootstrap-3.3.5/js/bootstrap.js").SetVersion("3.3.4").SetDependencies("jQuery");
+            manifest.DefineScript("Bootstrap").SetUrl("bootstrap-3.4.1/js/bootstrap.min.js", "bootstrap-3.4.1/js/bootstrap.js").SetVersion("3.4.1").SetDependencies("jQuery");
             manifest.DefineScript("HoverDropdown").SetUrl("hover-dropdown.js").SetDependencies("Bootstrap");
             manifest.DefineScript("Stapel-Modernizr").SetUrl("stapel/modernizr.custom.63321.js");
             manifest.DefineScript("Stapel").SetUrl("stapel/jquery.stapel.js").SetDependencies("jQuery", "Stapel-Modernizr");
